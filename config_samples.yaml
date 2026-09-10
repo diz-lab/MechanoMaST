@@ -1,0 +1,125 @@
+# Config file which contains the probed grid sizes and other additonal information about the 11 probed CRC LM samples.
+'01':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [15, 15]
+
+    spot_position_rotation: false
+
+    image_rotation: 18
+
+#Sample ID Patient 2
+'02':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+
+    spot_position_rotation: true
+  
+'03':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [5, 5]
+
+    spot_position_rotation: false
+
+'04':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+
+    spot_position_rotation: true
+
+'05':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+
+    spot_position_rotation: false
+
+'06':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+
+    spot_position_rotation: false
+
+    #required if a 20X H&E image is close to the border of the 10X H&E image 
+    template_cropping:
+        crop_FOV: 1 # grid number, index will be one lower
+        left: 400
+
+'7a':
+    grid_dimensions:
+    - [20, 20]
+    - [10, 10]
+
+    spot_position_rotation: false
+
+'7b':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+
+    spot_position_rotation: false
+
+'08':
+    grid_dimensions:
+    - [10, 20]
+    - [10, 10]
+    - [18, 9]
+    - [5, 5]
+    - [5, 10]
+
+    spot_position_rotation: false
+
+'09':
+    grid_dimensions:
+    - [8, 8]
+    - [5, 5]
+    - [7, 7]
+    - [7, 7]
+    - [6, 6]
+    - [4, 4]
+    - [4, 4]
+
+    spot_position_rotation: false
+
+'10':
+    grid_dimensions:
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+    - [10, 10]
+
+    spot_position_rotation: false
+
+
+
