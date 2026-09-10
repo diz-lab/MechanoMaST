@@ -1,0 +1,5 @@
+#Folder with large images that will need to be downloaded from an external database  by users
+External_Image_Inputs/
+
+#Mac
+.DS_Store
