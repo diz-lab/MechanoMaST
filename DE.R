@@ -9,14 +9,18 @@ library(dplyr)
 library(BiocParallel)
 library(edgeR)
 
+# Set up paths
+input_dir  <- ""
+output_dir <- ""
+
 values <- c(275,550,825)
 
 for (value in values) { 
   # Load the counts matrix
-  counts <- as.matrix(read.csv(paste0("/g/korbel/olisov/Visium_Linda/DE/final/11_counts_", value, ".csv"), row.names = 1))
+  counts <- as.matrix(read.csv(paste0("/g/korbel/olisov/Visium_Linda/DE/3875_11_counts_", value, ".csv"), row.names = 1))
   
   # Load the metadata
-  coldata <- read.csv(paste0("/g/korbel/olisov/Visium_Linda/DE/final/11_coldata_", value, ".csv"), row.names = 1)
+  coldata <- read.csv(paste0("/g/korbel/olisov/Visium_Linda/DE/3875_11_coldata_", value, ".csv"), row.names = 1)
   
   # Clean the column names in counts
   colnames(counts) <- gsub("^X", "", colnames(counts))          # Remove leading 'X'
@@ -74,7 +78,7 @@ for (value in values) {
   
   write.table(
     top_table,
-    file = paste0("/g/korbel/olisov/Visium_Linda/stiffness/DE/11samples/", value, "_zinbw_edgeR_all_final.tsv"),
+    file = paste0("/g/korbel/olisov/Visium_Linda/stiffness/DE/11samples/", value, "_zinbw_edgeR_all_3875.tsv"),
     sep = "\t",
     row.names = TRUE,
     quote = FALSE
