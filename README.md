@@ -5,14 +5,16 @@ Mechanics mapped to Spatial Transcriptomics (MechanoMaST) is a workflow that ena
 This GitHub repository contains all the required code to reproduce the results of the following pre-print:
 https://doi.org/10.64898/2026.08.29.747727
 
+<img width="2127" height="980" alt="Image" src="https://github.com/user-attachments/assets/0c9482e7-b597-4088-8ad7-dd1f3fa2b14a" />
+
 ## Reproduction of our results
 
 ### What you need:
 1. This repository. You can clone it by running the following line of code in a terminal:  
 ``` git clone https://github.com/diz-lab/mechanoMaST.git ```
 
-3. The external input images which are available here:  
-Large image data will be deposited to a database. The link will be pasted here.
+2. The external input images which are available here:  
+Large image data will be deposited to a database. The link will be pasted here. During the review process, the images are accessible to reviewers via owncloud.
 
 ### How to do it:
 1. Open the Jupyter notebook 20260825_generalMapping_withConfigFile.ipynb (in the folder Scripts).   
@@ -26,3 +28,4 @@ The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', 
 4. Run the script. 
 
 ## How to adapt it to your data
+
