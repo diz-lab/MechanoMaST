@@ -32,9 +32,14 @@ The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', 
 1. Clone this repository.
    ``` git clone https://github.com/diz-lab/mechanoMaST.git ```
 
-2. Install Napari and the affinder plug-in according to the developers instructions.
-   https://github.com/napari/napari
-   https://github.com/jni/affinder
+2. Install Napari and the affinder plug-in according to the developers instructions.  
+   https://github.com/napari/napari   
+   https://github.com/jni/affinder 
+
+3. Generate affine transformation matrices using the napari affinder plug-in
+   
+4. Adapt the Jupyter notebook 20260825_generalMapping_withConfigFile.ipynb (in the folder Scripts in this repository) by specifying the input paths to your images and transformation matrices. Additionally, the you might have to revisit the create_coordinate_grid function. It assumes that AFM measurements are acquired in a vertical serpentine pattern starting from the bottom right upwards. And run it. 
+
    
    
 
