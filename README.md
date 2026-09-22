@@ -29,3 +29,12 @@ The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', 
 
 ## How to adapt it to your data
 
+1. Clone this repository.
+   ``` git clone https://github.com/diz-lab/mechanoMaST.git ```
+
+2. Install Napari and the affinder plug-in according to the developers instructions.
+   https://github.com/napari/napari
+   https://github.com/jni/affinder
+   
+   
+
