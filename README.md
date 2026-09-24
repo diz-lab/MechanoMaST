@@ -25,7 +25,12 @@ It contains the outputs for Patient 4 as an example.
 3. Change sample_id = '04' in the same cell to the sample you would like to analyse.  
 The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', '09', '10'
 
-4. Run the script. 
+4. Run the script.
+
+## How to cite
+Please cite the following pre-print:
+
+Decker L, Olisov D, Schleussner N, Wiethoff H, Schmidt T, Nienhueser H, Pausch TM, Korbel JO, Diz-Munoz A. 2026. MechanoMaST - a multimodal pipeline for spatially registering mechanical and transcriptomic tissue data. DOI: https://doi.org/10.64898/2026.08.29.747727
 
 ## How to adapt it to your data
 
@@ -43,8 +48,3 @@ The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', 
 4. Adapt the Jupyter notebook 20260825_generalMapping_withConfigFile.ipynb (in the folder Scripts in this repository) by specifying the input paths to your images and transformation matrices. Additionally, the you might have to revisit the create_coordinate_grid function. It assumes that AFM measurements are acquired in a vertical serpentine pattern starting from the bottom right upwards. Then run the script. 
 
    
-## How to cite
-Please cite the following pre-print:
-
-Decker L, Olisov D, Schleussner N, Wiethoff H, Schmidt T, Nienhueser H, Pausch TM, Korbel JO, Diz-Munoz A. 2026. MechanoMaST - a multimodal pipeline for spatially registering mechanical and transcriptomic tissue data. DOI: https://doi.org/10.64898/2026.08.29.747727
-
