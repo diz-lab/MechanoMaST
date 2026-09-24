@@ -29,6 +29,8 @@ The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', 
 
 ## How to adapt it to your data
 
+(More general versions of the scripts are planned to be released in the future.)
+
 1. Clone this repository.
    ``` git clone https://github.com/diz-lab/mechanoMaST.git ```
 
@@ -38,8 +40,11 @@ The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', 
 
 3. Generate affine transformation matrices using the napari affinder plug-in
    
-4. Adapt the Jupyter notebook 20260825_generalMapping_withConfigFile.ipynb (in the folder Scripts in this repository) by specifying the input paths to your images and transformation matrices. Additionally, the you might have to revisit the create_coordinate_grid function. It assumes that AFM measurements are acquired in a vertical serpentine pattern starting from the bottom right upwards. And run it. 
+4. Adapt the Jupyter notebook 20260825_generalMapping_withConfigFile.ipynb (in the folder Scripts in this repository) by specifying the input paths to your images and transformation matrices. Additionally, the you might have to revisit the create_coordinate_grid function. It assumes that AFM measurements are acquired in a vertical serpentine pattern starting from the bottom right upwards. Then run the script. 
 
    
-   
+## How to cite
+Please cite the following pre-print:
+
+Decker L, Olisov D, Schleussner N, Wiethoff H, Schmidt T, Nienhueser H, Pausch TM, Korbel JO, Diz-Munoz A. 2026. MechanoMaST - a multimodal pipeline for spatially registering mechanical and transcriptomic tissue data. DOI: https://doi.org/10.64898/2026.08.29.747727
 
