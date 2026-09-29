@@ -28,7 +28,7 @@ Inputs:
 -
 - External input images (download from Owncloud/Zenodo; external_input_path needs to be specified by user)
 - [Affine transformation matrices](Inputs/Matrices)
-- [Tissue position table](Inputs/tissue_position.csv)
+- [Tissue position table](Inputs/tissue_positions.csv)
 - [Config File](config_sample.yaml)
 
 Outputs:
