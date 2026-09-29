@@ -63,7 +63,7 @@ Next, each mapped AFM measurement is moved by its mapping error (default = 0.5 s
 
 ### 4. `Measurements_processing.ipynb` — Stiffness measurement QC and mapping
 
-Processes raw stiffness measurements and pathologist annotations, filtering out outliers and calculates mean stiffness. 
+Processes raw stiffness measurements and pathologist annotations, filters out outliers and calculates mean stiffness. 
 
 ### 5. `Visium_processing.ipynb` — Spatial transcriptomics processing
 
@@ -93,6 +93,7 @@ Decker L, Olisov D, Schleussner N, Wiethoff H, Schmidt T, Nienhueser H, Pausch T
    https://github.com/napari/napari   
    https://github.com/jni/affinder 
 
-3. Generate affine transformation matrices using the napari affinder plug-in
+3. Generate affine transformation matrices using the napari affinder plug-in.
    
-4. Adapt the Jupyter notebook 20260825_generalMapping_withConfigFile.ipynb (in the folder Scripts in this repository) by specifying the input paths to your images and transformation matrices. Additionally, the you might have to revisit the create_coordinate_grid function. It assumes that AFM measurements are acquired in a vertical serpentine pattern starting from the bottom right upwards. Then run the script. 
+4. Run the MechanoMaST pipeline with adapted input paths to your files. Additionally, the create_coordinate_grid function in Script 1 `Mapping_withConfigFile.ipynb` might need to be adapted. It assumes that AFM measurements are acquired in a vertical serpentine pattern starting from the bottom right upwards. Then run the script.
+   
