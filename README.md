@@ -16,7 +16,7 @@ The pipeline consists of six scripts, run in the order below.
 1. This repository. You can clone it by running the following line of code in a terminal:  
 ``` git clone https://github.com/diz-lab/mechanoMaST.git ```
 
-2. The [external input images](https://10.5281/zenodo.23042812.), under embargo until formal publication of the MechanoMaST workflow.
+2. The external input images ([https://10.5281/zenodo.23042812.](https://doi.org/10.5281/zenodo.23042812)), under embargo until formal publication of the MechanoMaST workflow.
 During the review process, the images are accessible to reviewers via owncloud.
 
 3. The Visium Spatial Transcriptomics dataset. The data will be deposited to a database upon formal publication of the MechanoMaST workflow.
