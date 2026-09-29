@@ -1,21 +1,98 @@
-## Overview
+# MechanoMaST
 
-Provided scripts are used to process Visium spatial transcriptomics samples, map AFM stiffness measurements onto individual capture spots, and combine both data types to (1) test for differential gene expression (DE) between high- and low-stiffness spots and (2) train a Random Forest model that predicts spot-level stiffness from gene expression. The pipeline consists of four scripts, run in the order below.
+Mechanics mapped to Spatial Transcriptomics (MechanoMaST) is a workflow that enables the spatial mapping of stiffness maps to spatial transcriptomics (ST) maps acquired in adjacent tissue sections.
+
+This GitHub repository contains all the required code to reproduce the results of the following pre-print:
+https://doi.org/10.64898/2026.08.29.747727
+
+<img width="2127" height="980" alt="Image" src="https://github.com/user-attachments/assets/0c9482e7-b597-4088-8ad7-dd1f3fa2b14a" />
+
+The provided scripts are used to process Visium ST data, map AFM stiffness measurements onto individual capture spots, perform an error propagation and filter for confidently mapped measurements, and combine both data types to (1) test for differential gene expression (DE) between high- and low-stiffness spots and (2) train a Random Forest model that predicts spot-level stiffness from gene expression. 
 
 ## Pipeline
+The pipeline consists of six scripts, run in the order below.
 
-### 1. `Measurements_processing.ipynb` — Stiffness measurement QC and mapping
+### Inputs
+1. This repository. You can clone it by running the following line of code in a terminal:  
+``` git clone https://github.com/diz-lab/mechanoMaST.git ```
+
+2. The external input images. They will be stored in Zenodo. The respective DOI will be linked here soon.
+During the review process, the images are accessible to reviewers via owncloud.
+
+3. The Visium Spatial Transcriptomics dataset. The data will be deposited to a database upon formal publication of the MechanoMaST workflow.
+The link will be pasted here. During the review process, the dataset is accessible to reviewers via owncloud.
+
+### 1. `Mapping_withConfigFile.ipynb` — Map AFM measurements to ST capture spots
+
+Inputs:
+-
+- External input images (download from Owncloud/Zenodo; external_input_path needs to be specified by user)
+- [Affine transformation matrices](Inputs/Matrices)
+- [Tissue position table](Inputs/tissue_position.csv)
+- [Config File](config_sample.yaml)
+
+Outputs:
+-
+- [Template matching matrices](Outputs/Matrices/Template_Matching)
+- [Direct transformation matrices](Outputs/Matrices/Direct_Transformation)
+- [Mapped dataframe](Outputs/Mapping) with transformed AFM coordinates assigned to ST capture spots
+
+This script contains the outputs for Patient 4 as an example. Since it uses a config file,
+simply change sample_id = '04' in the cell 2 to the sample you would like to analyse.  
+The possible options are: '01', '02', '03', '04', '05', '06', '7a', '7b', '08', '09', '10'
+
+For each Patient, one [mapped dataframe](Outputs/Mapping) is saved as a csv file. A combination of all of them into an Excel file can be found
+in the Inputs folder [ST_AFM_Mapping.xlsx](Inputs/ST_AFM_Mapping.xlsx).
+
+### 2. `ErrorPropagation.ipynb` — Propagate the image registration error and filter for confidently mapped spots
+
+Inputs:
+-
+- Summarized [Mapped AFM measurements](Inputs/ST_AFM_Mapping.xlsx) from Script 1 `Mapping_withConfigFile.ipynb`
+- [Table of Landmarks](Inputs/Landmarks.xlsx) (selected using the napari affinder plug-in)
+- [AFM coordinates](Inputs/AFM_Coords.xlsx) in tidy format
+
+Outputs:
+-
+- [Error propagation dataframe](Outputs/Error_Propagated_Data.csv) containing all AFM measurements and their mapping errors.
+- [Filtered Dataframe](Outputs/Mapped_Filtered_AFM_Measurements.csv) containing only stably mapped measurements.
+  
+
+This script takes the mapped AFM dataframe produced by Script 1 and performs an error propagation based on landmarks.
+Next, each mapped AFM measurement is moved by its mapping error (default = 0.5 standard deviations) and the dataset is filtered to only contain measurements that can be subjected to this movement without switching to a different ST spot. 
+
+### 4. `Measurements_processing.ipynb` — Stiffness measurement QC and mapping
 
 Processes raw stiffness measurements and pathologist annotations, filtering out outliers and calculates mean stiffness. 
 
-### 2. `Visium_processing.ipynb` — Spatial transcriptomics processing
+### 5. `Visium_processing.ipynb` — Spatial transcriptomics processing
 
 Reads raw 10x Visium output for each sample, computes QC metrics and concatenates all samples. AFM measurements are merged based on barcodes.
 
-### 3. `DE.R` — Differential expression (ZINB-WaVE + edgeR)
+### 6. `DE.R` — Differential expression (ZINB-WaVE + edgeR)
 
-Runs differential expression between `ECM_high` and `ECM_low` spots for each of the three stiffness thresholds (260 Pa, 520 Pa, 780 Pa) produced in step 2.
+Runs differential expression between `ECM_high` and `ECM_low` spots for each of the three stiffness thresholds (260 Pa, 520 Pa, 780 Pa) produced in step 5.
 
-### 4. `RF.ipynb` — Random Forest stiffness prediction
+### 7. `RF.ipynb` — Random Forest stiffness prediction
 
-Trains a regression model to predict per-spot stiffness from gene expression, using the merged table produced in step 2.
+Trains a regression model to predict per-spot stiffness from gene expression, using the merged table produced in step 5.
+
+## How to cite
+Please cite the following pre-print:
+
+Decker L, Olisov D, Schleussner N, Wiethoff H, Schmidt T, Nienhueser H, Pausch TM, Korbel JO, Diz-Munoz A. 2026. MechanoMaST - a multimodal pipeline for spatially registering mechanical and transcriptomic tissue data. DOI: https://doi.org/10.64898/2026.08.29.747727
+
+## How to adapt it to your data
+
+(More general versions of the scripts are planned to be released in the future.)
+
+1. Clone this repository.
+   ``` git clone https://github.com/diz-lab/mechanoMaST.git ```
+
+2. Install Napari and the affinder plug-in according to the developers instructions.  
+   https://github.com/napari/napari   
+   https://github.com/jni/affinder 
+
+3. Generate affine transformation matrices using the napari affinder plug-in
+   
+4. Adapt the Jupyter notebook 20260825_generalMapping_withConfigFile.ipynb (in the folder Scripts in this repository) by specifying the input paths to your images and transformation matrices. Additionally, the you might have to revisit the create_coordinate_grid function. It assumes that AFM measurements are acquired in a vertical serpentine pattern starting from the bottom right upwards. Then run the script. 
