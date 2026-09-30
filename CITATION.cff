@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use MechanoMaST, please cite it as below."
+authors:
+- family-names: "Decker"
+  given-names: "Linda"
+  orcid: "https://orcid.org/0000-0001-5495-2611"
+- family-names: "Olisov"
+  given-names: "Dmitrii"
+  orcid: "https://orcid.org/0009-0005-7432-0765"
+title: "MechanoMaST"
+version: 1.0.0
+doi: 
+date-released: 2026-09-30
+url: "https://github.com/diz-lab/MechanoMaST"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Decker"
+    given-names: "Linda"
+    orcid: "https://orcid.org/0000-0001-5495-2611"
+  - family-names: "Olisov"
+    given-names: "Dmitrii"
+    orcid: "https://orcid.org/0009-0005-7432-0765"
+  - family-names: "Schleußner"
+    given-names: "Nikolai"
+  - family-names: "Wiethoff"
+    given-names: "Hendrik"
+  - family-names: "Schmidt"
+    given-names: "Thomas"
+    orcid: "https://orcid.org/0000-0002-7166-3675"
+  - family-names: "Nienhüser"
+    given-names: "Henrik"
+  - family-names: "Pausch"
+    given-names: "Thomas Moritz"
+    orcid: "https://orcid.org/0000-0001-6145-3263"
+  - family-names: "Korbel"
+    given-names: "Jan Oliver"
+    orcid: "https://orcid.org/0000-0002-2798-3794"
+  - family-names: "Diz-Muñoz"
+    given-names: "Alba"
+    orcid: "https://orcid.org/0000-0001-6864-8901"
+  doi: 10.64898/2026.08.29.747727
+  publisher: "bioRxiv"
+  title: "MechanoMaST – a multimodal pipeline for spatially registering mechanical and transcriptomic tissue data"
+  year: 2026
