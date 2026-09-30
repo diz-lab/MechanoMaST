@@ -5,9 +5,10 @@ Mechanics mapped to Spatial Transcriptomics (MechanoMaST) is a workflow that ena
 This GitHub repository contains all the required code to reproduce the results of the following pre-print:
 https://doi.org/10.64898/2026.08.29.747727
 
+The provided scripts are used to process Visium ST data, map AFM stiffness measurements onto individual capture spots, perform an error propagation and filter for confidently mapped measurements, and combine both data types to (1) test for differential gene expression (DE) between high- and low-stiffness spots and (2) train a Random Forest model that predicts spot-level stiffness from gene expression. 
+
 <img width="2127" height="2888" alt="Image" src="https://github.com/user-attachments/assets/5ab6050d-b899-4035-ad90-5341bc3196de" />
 
-The provided scripts are used to process Visium ST data, map AFM stiffness measurements onto individual capture spots, perform an error propagation and filter for confidently mapped measurements, and combine both data types to (1) test for differential gene expression (DE) between high- and low-stiffness spots and (2) train a Random Forest model that predicts spot-level stiffness from gene expression. 
 
 ## Pipeline
 The pipeline consists of six scripts, run in the order below.
