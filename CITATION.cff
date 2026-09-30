@@ -9,7 +9,7 @@ authors:
   orcid: "https://orcid.org/0009-0005-7432-0765"
 title: "MechanoMaST"
 version: 1.0.0
-doi: 
+doi: 10.5281/zenodo.23064485
 date-released: 2026-09-30
 url: "https://github.com/diz-lab/MechanoMaST"
 preferred-citation:
