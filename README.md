@@ -42,8 +42,7 @@ with the following setting: model = affine, reference = image B or D, respective
 
 ### 1. `Mapping_withConfigFile.ipynb` — Map AFM measurements to ST capture spots
 
-Inputs:
--
+####Inputs:
 - External input images (download from Owncloud/Zenodo; external_input_path needs to be specified by user)
 - [Affine transformation matrices](Inputs/Matrices)
 - [Tissue position table](Inputs/tissue_positions.csv)
