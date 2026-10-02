@@ -1,0 +1,11 @@
+anndata
+matplotlib
+numpy
+opencv-python
+openpyxl
+pandas
+pyyaml
+scanpy
+scikit-learn
+scipy
+seaborn

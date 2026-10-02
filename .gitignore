@@ -3,3 +3,6 @@ External_Image_Inputs/
 
 #Mac
 .DS_Store
+# pixi environments
+.pixi/*
+!.pixi/config.toml

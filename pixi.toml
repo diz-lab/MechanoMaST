@@ -1,0 +1,36 @@
+[workspace]
+authors = ["deckerlin <lindadecker@gmx.net>"]
+channels = ["conda-forge", "bioconda"]
+name = "mechanoMaST"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = "*"
+jupyterlab = "*"
+r-base = "*"
+r-dplyr = "*"
+r-magrittr = "*"
+r-matrixstats = "*"
+r-readr = "*"
+bioconductor-zinbwave = "*"
+bioconductor-scrnaseq = "*"
+bioconductor-biomart = "*"
+bioconductor-sparsematrixstats = "*"
+bioconductor-biocparallel = "*"
+bioconductor-edger = "*"
+
+[pypi-dependencies]
+anndata = "*"
+matplotlib = "*"
+numpy = "*"
+opencv-python = "*"
+openpyxl = "*"
+pandas = "*"
+pyyaml = "*"
+scanpy = "*"
+scikit-learn = "*"
+scipy = "*"
+seaborn = "*"
