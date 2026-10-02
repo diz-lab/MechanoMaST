@@ -14,7 +14,7 @@ input_dir  <- ""
 output_dir <- ""
 
 # Stiffness thresholds 
-values <- c(275,550,825)
+values <- c(260,520,780)
 
 for (value in values) { 
   # Load the counts matrix
