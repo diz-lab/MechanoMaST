@@ -87,7 +87,7 @@ Next, each mapped AFM measurement is moved by its mapping error (default = 0.5 s
 - [Filtered AFM measurements](Outputs/filtered_measurements.tsv)
 - [QC Histogram](QC_Hist.svg)
 
-Processes raw stiffness measurements and pathologist annotations, filters out outliers and calculates mean stiffness. 
+Processes raw stiffness measurements and pathologist annotations, filters out outliers. 
 
 ### 4. `Visium_processing.ipynb` — Spatial transcriptomics processing
 
@@ -102,12 +102,12 @@ Processes raw stiffness measurements and pathologist annotations, filters out ou
 - QC plots
 - dataframe with stiffness, barcodes and gene expression levels for downstream analysis
   
-Reads raw 10x Visium output for each sample, computes QC metrics and concatenates all samples. AFM measurements are merged based on barcodes.
+Reads Cell Ranger 10x Visium output for each sample, computes QC metrics and concatenates all samples. AFM measurements are merged based on barcodes.
 
 ### 5. `DE.R` — Differential expression (ZINB-WaVE + edgeR)
 
 **Inputs:**
-- dataframe with stiffness, barcodes and gene expression levels for downstream analysis (created in step4)
+- dataframe with stiffness, barcodes and raw gene expression levels for downstream analysis (created in step4)
 
 **Outputs:**
 - one differential expression analysis results tables for each stiffness threshold
@@ -117,7 +117,7 @@ Runs differential expression between `ECM_high` and `ECM_low` spots for each of 
 ### 6. `RF.ipynb` — Random Forest stiffness prediction
 
 **Inputs:**
-- dataframe with stiffness, barcodes and gene expression levels for downstream analysis (created in step4)
+- dataframe with stiffness, barcodes and normalized gene expression levels for downstream analysis (created in step4)
 
 **Outputs:**
 - Feature importance table
