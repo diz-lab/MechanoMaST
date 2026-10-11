@@ -10,7 +10,7 @@ The provided scripts are used to process Visium ST data, map AFM stiffness measu
 <img width="2127" height="2888" alt="Image" src="https://github.com/user-attachments/assets/5ab6050d-b899-4035-ad90-5341bc3196de" />
 
 ## Pipeline
-The pipeline consists of six scripts, preceded by an external image registration step run in the order below.
+The pipeline consists of six scripts, preceded by an external image registration step run in the order below. The expected runtime is 5-15 min (depending on whether the optional plots are generated or not) per sample for the mapping script and 20 minutes for the remaining pipeline. 
 
 ### Inputs and Requirements
 1. This repository. You can clone it by running the following line of code in a terminal:  
