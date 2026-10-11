@@ -9,13 +9,20 @@ The provided scripts are used to process Visium ST data, map AFM stiffness measu
 
 <img width="2127" height="2888" alt="Image" src="https://github.com/user-attachments/assets/5ab6050d-b899-4035-ad90-5341bc3196de" />
 
-
 ## Pipeline
 The pipeline consists of six scripts, preceded by an external image registration step run in the order below.
 
-### Inputs
+### Inputs and Requirements
 1. This repository. You can clone it by running the following line of code in a terminal:  
-``` git clone https://github.com/diz-lab/mechanoMaST.git ```
+``` git clone https://github.com/diz-lab/MechanoMaST.git
+    cd MechanoMast ```
+
+    To run the script, you need both, Python (we used version 3.13.12) and R (we used version 4.3.1). The requirements for Python are listed in [requirements.txt](requirements.txt). Additionally, [pixi.toml](pixi.toml) contains both, Python and R requirements.
+To install pixi, follow the [official installation instructions](https://pixi.sh/latest/installation/), then install and activate the dependencies using the following commands:
+ ``` pixi install
+    pixi shell ```
+
+Currently, pixi.toml is only resolved for Apple Silicon macOS (osx-arm64). For other platforms, update the pixi.toml platforms parameter accordingly and resolve any platform-specific dependency conflicts before installing the environment.
 
 2. The external input images ([https://10.5281/zenodo.23042812.](https://doi.org/10.5281/zenodo.23042812)), under embargo until formal publication of the MechanoMaST workflow.
 During the review process, the images are accessible to reviewers via owncloud.
