@@ -27,7 +27,7 @@ pixi install
 pixi shell
 ```
 
-Currently, pixi.toml is only resolved for Apple Silicon macOS (osx-arm64). For other platforms, update the pixi.toml platforms parameter accordingly and resolve any platform-specific dependency conflicts before installing the environment.
+Currently, pixi.toml is only resolved for Apple Silicon macOS (osx-arm64). For other platforms, update the pixi.toml platforms parameter accordingly and resolve any platform-specific dependency conflicts before installing the environment. The estimated installation time is 15-20 min.
 
 2. The external input images ([https://10.5281/zenodo.23042812.](https://doi.org/10.5281/zenodo.23042812)), under embargo until formal publication of the MechanoMaST workflow.
 During the review process, the images are accessible to reviewers via owncloud.
