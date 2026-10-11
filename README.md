@@ -14,13 +14,17 @@ The pipeline consists of six scripts, preceded by an external image registration
 
 ### Inputs and Requirements
 1. This repository. You can clone it by running the following line of code in a terminal:  
-``` git clone https://github.com/diz-lab/MechanoMaST.git
-    cd MechanoMast ```
+```
+git clone https://github.com/diz-lab/MechanoMaST.git
+    cd MechanoMast
+```
 
     To run the script, you need both, Python (we used version 3.13.12) and R (we used version 4.3.1). The requirements for Python are listed in [requirements.txt](requirements.txt). Additionally, [pixi.toml](pixi.toml) contains both, Python and R requirements.
 To install pixi, follow the [official installation instructions](https://pixi.sh/latest/installation/), then install and activate the dependencies using the following commands:
- ``` pixi install
-    pixi shell ```
+ ```
+pixi install
+pixi shell
+```
 
 Currently, pixi.toml is only resolved for Apple Silicon macOS (osx-arm64). For other platforms, update the pixi.toml platforms parameter accordingly and resolve any platform-specific dependency conflicts before installing the environment.
 
