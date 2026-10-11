@@ -19,9 +19,10 @@ git clone https://github.com/diz-lab/MechanoMaST.git
     cd MechanoMast
 ```
 
-    To run the script, you need both, Python (we used version 3.13.12) and R (we used version 4.3.1). The requirements for Python are listed in [requirements.txt](requirements.txt). Additionally, [pixi.toml](pixi.toml) contains both, Python and R requirements.
+To run the script, you need both, Python (we used version 3.13.12) and R (we used version 4.3.1). The requirements for Python are listed in [requirements.txt](requirements.txt). Additionally, [pixi.toml](pixi.toml) contains both, Python and R requirements.
 To install pixi, follow the [official installation instructions](https://pixi.sh/latest/installation/), then install and activate the dependencies using the following commands:
- ```
+
+```
 pixi install
 pixi shell
 ```
